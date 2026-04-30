@@ -1,80 +1,2606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moringa Agro Industries - Coming Soon</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moringa Vitality™ — Premium Organic Moringa Superfood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ============================================
+           ROOT VARIABLES & RESET
+           ============================================ */
+        :root {
+            --primary: #2D5A27;
+            --primary-light: #4A8B3F;
+            --primary-dark: #1A3A18;
+            --secondary: #C8A951;
+            --secondary-light: #E8D48B;
+            --accent: #8B6914;
+            --bg-cream: #FBF8F1;
+            --bg-white: #FFFFFF;
+            --bg-light: #F5F0E8;
+            --bg-dark: #1A1A1A;
+            --text-dark: #2C2C2C;
+            --text-medium: #5A5A5A;
+            --text-light: #8A8A8A;
+            --text-white: #FFFFFF;
+            --border: #E8E2D6;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    body {
-      background: linear-gradient(135deg, #1d4d2b, #4caf50);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 50px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    p {
-      font-size: 20px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+        /* ============================================
+           ANNOUNCEMENT BAR
+           ============================================ */
+        .announcement-bar {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-dark));
+            color: var(--text-white);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1001;
+        }
 
-    .email {
-      display: inline-block;
-      padding: 12px 25px;
-      background: white;
-      color: #1d4d2b;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .announcement-bar span {
+            color: var(--secondary-light);
+            font-weight: 700;
+        }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 0 var(--border);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.92rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-icon:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: var(--secondary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 92vh;
+            background: linear-gradient(135deg, #f0f7ee 0%, #e8f0e4 30%, #dae8d4 60%, #c8dcc0 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(45,90,39,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200,169,81,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(45,90,39,0.1);
+            border: 1px solid rgba(45,90,39,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            max-width: 500px;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(45,90,39,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(45,90,39,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            box-shadow: 0 4px 15px rgba(200,169,81,0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200,169,81,0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(45,90,39,0.15);
+        }
+
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            max-width: 550px;
+            border-radius: var(--radius-lg);
+            filter: drop-shadow(0 20px 60px rgba(0,0,0,0.15));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 15px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-float-card.card-1 {
+            top: 10%;
+            right: -10%;
+            animation-delay: -1s;
+        }
+
+        .hero-float-card.card-2 {
+            bottom: 15%;
+            left: -5%;
+            animation-delay: -2s;
+        }
+
+        .float-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .float-icon.green {
+            background: rgba(45,90,39,0.1);
+            color: var(--primary);
+        }
+
+        .float-icon.gold {
+            background: rgba(200,169,81,0.15);
+            color: var(--secondary);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ============================================
+           TRUST BAR
+           ============================================ */
+        .trust-bar {
+            background: white;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .trust-text h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .trust-text p {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           CATEGORIES
+           ============================================ */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(45,90,39,0.08), rgba(45,90,39,0.15));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-icon {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .category-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           PRODUCTS GRID
+           ============================================ */
+        .products-section {
+            background: white;
+        }
+
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-medium);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--bg-cream);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .badge {
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-new {
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge-sale {
+            background: #E74C3C;
+            color: white;
+        }
+
+        .badge-best {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .badge-organic {
+            background: #27AE60;
+            color: white;
+        }
+
+        .product-wishlist {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 5;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-wishlist:hover {
+            background: #E74C3C;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-image {
+            position: relative;
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(180deg, #f8f6f0, #f0ede4);
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .quick-actions {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .product-card:hover .quick-actions {
+            bottom: 15px;
+            opacity: 1;
+        }
+
+        .quick-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .quick-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-name a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .product-name a:hover {
+            color: var(--primary);
+        }
+
+        .product-desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #F4C430;
+            font-size: 0.85rem;
+        }
+
+        .rating-count {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            font-size: 0.68rem;
+            padding: 4px 10px;
+            background: rgba(45,90,39,0.08);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .price-current {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-original {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .add-to-cart {
+            padding: 10px 22px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(45,90,39,0.3);
+        }
+
+        /* ============================================
+           FEATURED PRODUCT
+           ============================================ */
+        .featured-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #3a7a32 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200,169,81,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .featured-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .featured-content p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .featured-benefits {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .featured-benefits li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .featured-benefits li i {
+            color: var(--secondary-light);
+            font-size: 1rem;
+        }
+
+        .featured-price {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .featured-price .current {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .featured-price .original {
+            font-size: 1.3rem;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .featured-price .save {
+            background: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+           ============================================ */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(45,90,39,0.1), rgba(45,90,39,0.05));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .benefit-card p {
+            font-size: 0.88rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           NUTRITION COMPARISON
+           ============================================ */
+        .nutrition-section {
+            background: var(--bg-light);
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .nutrition-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 35px 25px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .nutrition-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nutrition-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .nutrition-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .nutrition-compare {
+            font-size: 0.78rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+           ============================================ */
+        .testimonials-section {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-cream);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.3;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-family: serif;
+        }
+
+        .testimonial-stars {
+            color: #F4C430;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.92rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .author-title {
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           CTA / NEWSLETTER
+           ============================================ */
+        .cta-section {
+            background: linear-gradient(135deg, #FBF8F1 0%, #F5F0E8 100%);
+            position: relative;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border-radius: var(--radius-xl);
+            padding: 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(200,169,81,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .cta-card p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 16px 35px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--bg-dark);
+            color: #999;
+            padding: 80px 0 0;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .footer-brand p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-light);
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.88rem;
+        }
+
+        .footer-contact i {
+            color: var(--secondary);
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 50px auto 0;
+            padding: 25px 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.82rem;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .payment-methods i {
+            font-size: 1.8rem;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .payment-methods i:hover {
+            opacity: 1;
+        }
+
+        /* ============================================
+           CART SIDEBAR
+           ============================================ */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 420px;
+            height: 100vh;
+            background: white;
+            z-index: 2001;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .cart-close {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .cart-close:hover {
+            background: #f5f5f5;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .cart-footer {
+            padding: 25px 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .cart-total strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkout-btn:hover {
+            box-shadow: 0 5px 20px rgba(45,90,39,0.3);
+        }
+
+        /* ============================================
+           BACK TO TOP
+           ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            background: var(--primary-dark);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 35px; }
+            .hero-btns { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-image { display: none; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .nutrition-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .section { padding: 60px 0; }
+            .section-title { font-size: 2rem; }
+            .products-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .categories-grid { grid-template-columns: 1fr 1fr; }
+            .cta-card { padding: 50px 30px; }
+            .newsletter-form { flex-direction: column; }
+            .nav-container { padding: 0 20px; }
+            .section-container { padding: 0 20px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .nutrition-grid { grid-template-columns: 1fr 1fr; }
+            .hero-stats { flex-direction: column; gap: 15px; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Coming Soon</h1>
-    <p>
-      Welcome to <strong>Moringa Agro Industries</strong>.<br>
-      Our new website is under development and will launch soon.
-    </p>
 
-    <a href="mailto:moringalumbini@gmail.com" class="email">
-      Contact Us
-    </a>
-
-    <div class="footer">
-      © 2026 Moringa Agro Industries. All Rights Reserved.
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        🌿 FREE SHIPPING on orders over <span>$50</span> | Use code <span>MORINGA20</span> for 20% OFF your first order!
     </div>
-  </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🌿</div>
+                <div class="logo-text">Moringa<span>Vitality</span>™</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="nav-icon"><i class="fas fa-search"></i></div>
+                <div class="nav-icon"><i class="fas fa-user"></i></div>
+                <div class="nav-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="cart-count" id="cartCount">3</div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-leaf"></i> 100% Organic & Pure
+                </div>
+                <h1>Nature's Most <br><span class="highlight">Powerful</span> Superfood</h1>
+                <p class="hero-subtitle">"The Miracle Tree" — Moringa Oleifera</p>
+                <p>Discover the extraordinary nutritional powerhouse that has nourished civilizations for over 4,000 years. Packed with 92+ nutrients, 46 antioxidants, and all essential amino acids.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Shop Collection
+                    </a>
+                    <a href="#benefits" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i> Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Organic Certified</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9★</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1611241893603-3c228ee8cd3f?w=600" alt="Moringa Products" class="hero-image-main" style="border-radius:20px;">
+                <div class="hero-float-card card-1">
+                    <div class="float-icon green"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <strong style="font-size:0.85rem;">USDA Organic</strong>
+                        <p style="font-size:0.72rem;color:#999;margin:0;">Certified Pure</p>
+                    </div>
+                </div>
+                <div class="hero-float-card card-2">
+                    <div class="float-icon gold"><i class="fas fa-award"></i></div>
+                    <div>
+                        <strong style="font-size:0.85rem;">Award Winning</strong>
+                        <p style="font-size:0.72rem;color:#999;margin:0;">Best Superfood 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-truck"></i></div>
+                <div class="trust-text">
+                    <h4>Free Shipping</h4>
+                    <p>On orders over $50</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-undo-alt"></i></div>
+                <div class="trust-text">
+                    <h4>30-Day Returns</h4>
+                    <p>Money-back guarantee</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-lock"></i></div>
+                <div class="trust-text">
+                    <h4>Secure Payment</h4>
+                    <p>SSL encrypted checkout</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-headset"></i></div>
+                <div class="trust-text">
+                    <h4>24/7 Support</h4>
+                    <p>Dedicated help desk</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Browse By Category</span>
+                <h2 class="section-title">Our Premium Collections</h2>
+                <p class="section-subtitle">Explore our carefully curated range of moringa products, each crafted with the highest standards of quality and purity.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card fade-in">
+                    <div class="category-icon">🍃</div>
+                    <h3>Moringa Powder</h3>
+                    <p>Pure leaf powder for smoothies & cooking</p>
+                </div>
+                <div class="category-card fade-in">
+                    <div class="category-icon">💊</div>
+                    <h3>Capsules & Supplements</h3>
+                    <p>Daily wellness in convenient form</p>
+                </div>
+                <div class="category-card fade-in">
+                    <div class="category-icon">🍵</div>
+                    <h3>Moringa Tea</h3>
+                    <p>Soothing herbal blends & infusions</p>
+                </div>
+                <div class="category-card fade-in">
+                    <div class="category-icon">💧</div>
+                    <h3>Oils & Skincare</h3>
+                    <p>Beauty & wellness essentials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="section products-section" id="shop">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Our Products</span>
+                <h2 class="section-title">Shop Premium Moringa</h2>
+                <p class="section-subtitle">Ethically sourced, lab-tested, and packed with nature's most potent nutrients.</p>
+            </div>
+
+            <div class="product-filters fade-in">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('powder')">Powder</button>
+                <button class="filter-btn" onclick="filterProducts('capsules')">Capsules</button>
+                <button class="filter-btn" onclick="filterProducts('tea')">Tea</button>
+                <button class="filter-btn" onclick="filterProducts('oil')">Oil & Skincare</button>
+                <button class="filter-btn" onclick="filterProducts('seeds')">Seeds</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                
+                <!-- PRODUCT 1: Moringa Leaf Powder -->
+                <div class="product-card fade-in" data-category="powder">
+                    <div class="product-badge">
+                        <span class="badge badge-best">Bestseller</span>
+                        <span class="badge badge-organic">Organic</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400" alt="Moringa Leaf Powder">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Moringa Powder</div>
+                        <h3 class="product-name"><a href="#">Organic Moringa Leaf Powder — Premium Grade</a></h3>
+                        <p class="product-desc">100% pure, shade-dried moringa oleifera leaf powder. Rich in vitamins A, C, E, calcium, potassium, and protein. Perfect for smoothies, lattes, and cooking.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(2,847 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">Non-GMO</span>
+                            <span class="meta-tag">Vegan</span>
+                            <span class="meta-tag">Gluten-Free</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$24.99</span>
+                                <span class="price-original">$34.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Leaf Powder', 24.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 2: Moringa Capsules -->
+                <div class="product-card fade-in" data-category="capsules">
+                    <div class="product-badge">
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400" alt="Moringa Capsules">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Supplements</div>
+                        <h3 class="product-name"><a href="#">Moringa Capsules — 120 Count (500mg)</a></h3>
+                        <p class="product-desc">Premium moringa leaf capsules for daily nutrition. Each capsule delivers 500mg of pure moringa. Easy-to-swallow vegetarian capsules for on-the-go wellness.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(1,923 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">120 Capsules</span>
+                            <span class="meta-tag">500mg Each</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$29.99</span>
+                                <span class="price-original">$39.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Capsules 120ct', 29.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 3: Moringa Tea -->
+                <div class="product-card fade-in" data-category="tea">
+                    <div class="product-badge">
+                        <span class="badge badge-best">Popular</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1563911892437-1feda0179e1b?w=400" alt="Moringa Tea">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Moringa Tea</div>
+                        <h3 class="product-name"><a href="#">Organic Moringa Herbal Tea — 30 Sachets</a></h3>
+                        <p class="product-desc">Hand-picked moringa leaves delicately dried and packaged in biodegradable tea sachets. A calming, nutrient-rich herbal tea with a mild, earthy flavor.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(1,456 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">30 Sachets</span>
+                            <span class="meta-tag">Caffeine-Free</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$18.99</span>
+                                <span class="price-original">$24.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Herbal Tea', 18.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 4: Moringa Oil -->
+                <div class="product-card fade-in" data-category="oil">
+                    <div class="product-badge">
+                        <span class="badge badge-sale">-25%</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400" alt="Moringa Oil">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Oil & Skincare</div>
+                        <h3 class="product-name"><a href="#">Cold-Pressed Moringa Oil — 100ml</a></h3>
+                        <p class="product-desc">100% pure, cold-pressed moringa (Ben) oil extracted from premium moringa seeds. Lightweight, non-greasy formula for skin, hair, and nails. Rich in oleic acid and antioxidants.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(987 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">Cold-Pressed</span>
+                            <span class="meta-tag">100ml</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$32.99</span>
+                                <span class="price-original">$44.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Cold-Pressed Moringa Oil', 32.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 5: Moringa Seeds -->
+                <div class="product-card fade-in" data-category="seeds">
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1515543904179-3a20f7e2b3c8?w=400" alt="Moringa Seeds">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Seeds</div>
+                        <h3 class="product-name"><a href="#">Organic Moringa Seeds — 250g Pack</a></h3>
+                        <p class="product-desc">Premium quality moringa seeds, carefully selected and cleaned. Great for planting, snacking, or water purification. High in protein, vitamins, and minerals.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(654 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">250g Pack</span>
+                            <span class="meta-tag">Multi-Use</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$19.99</span>
+                                <span class="price-original">$27.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Seeds 250g', 19.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 6: Moringa Powder (Large) -->
+                <div class="product-card fade-in" data-category="powder">
+                    <div class="product-badge">
+                        <span class="badge badge-sale">-30%</span>
+                        <span class="badge badge-best">Value Pack</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400" alt="Moringa Powder 1lb">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Moringa Powder</div>
+                        <h3 class="product-name"><a href="#">Moringa Leaf Powder — Family Size 1lb (454g)</a></h3>
+                        <p class="product-desc">Our bestselling moringa powder in a value-sized 1 pound resealable pouch. Perfect for families and daily users. 3-month supply with consistent daily use.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(3,112 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">1lb / 454g</span>
+                            <span class="meta-tag">3-Month Supply</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$39.99</span>
+                                <span class="price-original">$56.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Powder 1lb', 39.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 7: Moringa Capsules (High Strength) -->
+                <div class="product-card fade-in" data-category="capsules">
+                    <div class="product-badge">
+                        <span class="badge badge-new">New</span>
+                        <span class="badge badge-organic">Organic</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400" alt="Moringa Capsules High Strength">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Supplements</div>
+                        <h3 class="product-name"><a href="#">Moringa Extract Capsules — High Strength 1000mg</a></h3>
+                        <p class="product-desc">Extra-strength moringa extract capsules with 10:1 concentration ratio. Equivalent to 10,000mg fresh moringa per serving. 60 capsules per bottle.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(876 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">1000mg</span>
+                            <span class="meta-tag">10:1 Extract</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$34.99</span>
+                                <span class="price-original">$49.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Extract 1000mg', 34.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 8: Moringa Skincare Set -->
+                <div class="product-card fade-in" data-category="oil">
+                    <div class="product-badge">
+                        <span class="badge badge-best">Gift Set</span>
+                    </div>
+                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400" alt="Moringa Skincare Set">
+                        <div class="quick-actions">
+                            <button class="quick-btn" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="quick-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Skincare</div>
+                        <h3 class="product-name"><a href="#">Moringa Glow Skincare Collection — 3 Piece Set</a></h3>
+                        <p class="product-desc">Complete skincare ritual featuring moringa face serum, moringa face cream, and moringa body butter. Nourish, hydrate, and rejuvenate with nature's miracle tree.</p>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(543 reviews)</span>
+                        </div>
+                        <div class="product-meta">
+                            <span class="meta-tag">3-Piece Set</span>
+                            <span class="meta-tag">Gift Ready</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$59.99</span>
+                                <span class="price-original">$89.99</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Moringa Skincare Set', 59.99)">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align:center; margin-top:50px;" class="fade-in">
+                <a href="#" class="btn btn-secondary"><i class="fas fa-th"></i> View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCT -->
+    <section class="section featured-section">
+        <div class="section-container">
+            <div class="featured-grid">
+                <div class="featured-content fade-in">
+                    <span class="section-label" style="color:var(--secondary-light);">★ Featured Product</span>
+                    <h2>Ultimate Moringa Wellness Bundle</h2>
+                    <p>Everything you need for a complete moringa lifestyle. Our most popular products bundled together at an incredible value — powder, capsules, tea, and oil all in one premium gift box.</p>
+                    <ul class="featured-benefits">
+                        <li><i class="fas fa-check-circle"></i> Moringa Leaf Powder (250g)</li>
+                        <li><i class="fas fa-check-circle"></i> Moringa Capsules 120ct (500mg)</li>
+                        <li><i class="fas fa-check-circle"></i> Moringa Herbal Tea (30 sachets)</li>
+                        <li><i class="fas fa-check-circle"></i> Cold-Pressed Moringa Oil (50ml)</li>
+                        <li><i class="fas fa-check-circle"></i> Free Moringa Recipe eBook</li>
+                        <li><i class="fas fa-check-circle"></i> Premium Gift Box Packaging</li>
+                    </ul>
+                    <div class="featured-price">
+                        <span class="current">$89.99</span>
+                        <span class="original">$139.96</span>
+                        <span class="save">Save 36%</span>
+                    </div>
+                    <a href="#" class="btn btn-gold" onclick="addToCart('Wellness Bundle', 89.99)">
+                        <i class="fas fa-gift"></i> Add Bundle to Cart
+                    </a>
+                </div>
+                <div class="hero-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500" alt="Wellness Bundle" class="hero-image-main" style="border-radius:20px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="section" id="benefits">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Why Moringa?</span>
+                <h2 class="section-title">Extraordinary Health Benefits</h2>
+                <p class="section-subtitle">Moringa Oleifera is one of the most nutrient-dense plants ever discovered, offering a wide spectrum of health benefits.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Boosts Energy & Vitality</h3>
+                    <p>Rich in iron and B-vitamins, moringa naturally combats fatigue and increases energy levels without caffeine crashes.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Strengthens Immunity</h3>
+                    <p>Contains 7x more Vitamin C than oranges and powerful antioxidants that fortify your immune system year-round.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Enhances Brain Health</h3>
+                    <p>Rich in neuroprotective compounds, moringa supports cognitive function, memory, and mental clarity.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Heart & Blood Health</h3>
+                    <p>Helps maintain healthy blood pressure, cholesterol levels, and blood sugar balance naturally.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Radiant Skin & Hair</h3>
+                    <p>Vitamin E, zinc, and essential fatty acids nourish skin from within and promote strong, lustrous hair growth.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🦴</div>
+                    <h3>Strong Bones & Joints</h3>
+                    <p>4x more calcium than milk and anti-inflammatory compounds support bone density and joint comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUTRITION COMPARISON -->
+    <section class="section nutrition-section" id="about">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Nutritional Powerhouse</span>
+                <h2 class="section-title">Moringa vs. Common Foods</h2>
+                <p class="section-subtitle">See how moringa stacks up against everyday foods — the numbers speak for themselves.</p>
+            </div>
+            <div class="nutrition-grid">
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">7×</div>
+                    <div class="nutrition-label">More Vitamin C</div>
+                    <div class="nutrition-compare">than Oranges</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">4×</div>
+                    <div class="nutrition-label">More Calcium</div>
+                    <div class="nutrition-compare">than Milk</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">3×</div>
+                    <div class="nutrition-label">More Potassium</div>
+                    <div class="nutrition-compare">than Bananas</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">2×</div>
+                    <div class="nutrition-label">More Protein</div>
+                    <div class="nutrition-compare">than Yogurt</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">4×</div>
+                    <div class="nutrition-label">More Vitamin A</div>
+                    <div class="nutrition-compare">than Carrots</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">25×</div>
+                    <div class="nutrition-label">More Iron</div>
+                    <div class="nutrition-compare">than Spinach</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">92+</div>
+                    <div class="nutrition-label">Nutrients</div>
+                    <div class="nutrition-compare">In Every Serving</div>
+                </div>
+                <div class="nutrition-card fade-in">
+                    <div class="nutrition-value">46</div>
+                    <div class="nutrition-label">Antioxidants</div>
+                    <div class="nutrition-compare">Nature's Shield</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section" id="reviews">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-label">Customer Love</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Join thousands of satisfied customers who have transformed their wellness with MoringaVitality™.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">I've been using the moringa powder for 3 months and the difference in my energy levels is incredible. No more afternoon crashes! The quality is outstanding — you can taste the freshness.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div>
+                            <div class="author-name">Sarah K.</div>
+                            <div class="author-title">Verified Buyer</div>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">The moringa capsules are a game changer for my daily routine. So convenient! I've noticed my skin is clearer, my sleep is better, and I feel more balanced overall. Highly recommend!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <div class="author-name">Michael R.</div>
+                            <div class="author-title">Fitness Enthusiast</div>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">The moringa oil has transformed my skincare routine. My skin is glowing, my fine lines have softened, and it absorbed beautifully. The wellness bundle is an absolute steal — best gift I've given myself!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AJ</div>
+                        <div>
+                            <div class="author-name">Amara J.</div>
+                            <div class="author-title">Wellness Blogger</div>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / NEWSLETTER -->
+    <section class="section cta-section" id="contact">
+        <div class="section-container">
+            <div class="cta-card fade-in">
+                <h2>Join the Moringa Movement 🌿</h2>
+                <p>Subscribe to our newsletter and get 15% off your first order, plus exclusive recipes, health tips, and early access to new products.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🎉 Welcome! Check your inbox for your 15% discount code.');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Get 15% Off</button>
+                </form>
+                <p style="font-size:0.78rem; opacity:0.6; margin-top:15px;">🔒 We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">Moringa<span>Vitality</span>™</div>
+                <p>Premium organic moringa products sourced ethically from sustainable farms. Empowering health, one leaf at a time.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#shop">Shop All</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Moringa Powder</a></li>
+                    <li><a href="#">Capsules</a></li>
+                    <li><a href="#">Moringa Tea</a></li>
+                    <li><a href="#">Moringa Oil</a></li>
+                    <li><a href="#">Seeds</a></li>
+                    <li><a href="#">Bundles & Gifts</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <ul class="footer-links footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Green Valley Road, Suite 200, Los Angeles, CA 90001</li>
+                    <li><i class="fas fa-phone-alt"></i> +1 (800) 555-MORINGA</li>
+                    <li><i class="fas fa-envelope"></i> hello@moringavitality.com</li>
+                    <li><i class="fas fa-clock"></i> Mon - Fri: 9AM - 6PM PST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MoringaVitality™. All rights reserved. Made with 🌿 & ❤️</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+                <i class="fab fa-cc-stripe"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Your Cart (<span id="cartItemCount">3</span>)</h3>
+            <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-item">
+                <div class="cart-item-image">🍃</div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">Organic Moringa Leaf Powder</div>
+                    <div class="cart-item-price">$24.99</div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image">💊</div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">Moringa Capsules 120ct</div>
+                    <div class="cart-item-price">$29.99</div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image">🍵</div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">Moringa Herbal Tea — 30 Sachets</div>
+                    <div class="cart-item-price">$18.99</div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <strong id="cartTotal">$73.97</strong>
+            </div>
+            <p style="font-size:0.78rem; color:var(--text-light); margin-bottom:15px; text-align:center;">🚚 Free shipping on orders over $50!</p>
+            <button class="checkout-btn"><i class="fas fa-lock"></i> &nbsp; Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================
+        // NAVBAR SCROLL EFFECT
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // ============================================
+        // CART FUNCTIONALITY
+        // ============================================
+        let cartOpen = false;
+        let cartItems = [];
+        let cartTotal = 73.97;
+        let cartCount = 3;
+
+        function toggleCart() {
+            cartOpen = !cartOpen;
+            document.getElementById('cartSidebar').classList.toggle('active');
+            document.getElementById('cartOverlay').classList.toggle('active');
+            document.body.style.overflow = cartOpen ? 'hidden' : '';
+        }
+
+        function addToCart(name, price) {
+            cartCount++;
+            cartTotal += price;
+            document.getElementById('cartCount').textContent = cartCount;
+            document.getElementById('cartItemCount').textContent = cartCount;
+            document.getElementById('cartTotal').textContent = '$' + cartTotal.toFixed(2);
+            
+            // Add visual feedback
+            const newItem = document.createElement('div');
+            newItem.className = 'cart-item';
+            newItem.innerHTML = `
+                <div class="cart-item-image">🌿</div>
+                <div class="cart-item-details">
+                    <div class="cart-item-name">${name}</div>
+                    <div class="cart-item-price">$${price.toFixed(2)}</div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn">-</button>
+                        <span>1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('cartItems').appendChild(newItem);
+            
+            // Show cart briefly
+            if (!cartOpen) {
+                toggleCart();
+                setTimeout(() => {
+                    if (cartOpen) toggleCart();
+                }, 2500);
+            }
+        }
+
+        // ============================================
+        // PRODUCT FILTERING
+        // ============================================
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ============================================
+        // WISHLIST TOGGLE
+        // ============================================
+        document.querySelectorAll('.product-wishlist').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+                this.style.background = icon.classList.contains('fas') ? '#E74C3C' : 'white';
+                this.style.color = icon.classList.contains('fas') ? 'white' : '';
+            });
+        });
+
+        // ============================================
+        // SCROLL ANIMATIONS (Intersection Observer)
+        // ============================================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ============================================
+        // SMOOTH SCROLL FOR NAV LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
