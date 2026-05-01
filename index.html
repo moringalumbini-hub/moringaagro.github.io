@@ -440,32 +440,30 @@
         }
         .leader-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
         .leader-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 auto 15px;
-            font-family: 'Playfair Display', serif;
-        }
-        .leader-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-        }
-        .leader-card .role {
-            font-size: 0.8rem;
-            color: var(--secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    .leader-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent;
+  margin: 0 auto 15px auto;
+}
+
+.leader-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
         /* CATEGORIES */
         .categories-grid {
